@@ -782,3 +782,5 @@ Dockerfile
 migrations/
 migrations
 *.static
+*.vscode/
+*.vscode
