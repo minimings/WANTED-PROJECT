@@ -2,13 +2,11 @@ from .model_apply             import *
 from .model_apply_status      import *
 from .model_reward_status     import *
 from .model_bookmark          import *
-from .model_career_insight    import *
 from .model_career            import *
 from .model_company_user      import *
 from .model_country_code      import *
 from .model_general_user      import *
 from .model_intersted_keyword import *
-from .model_job_competency    import *
 from .model_like              import *
 from .model_open              import *
 from .model_phone_check       import *
