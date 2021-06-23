@@ -1,3 +1,4 @@
+from users.models.model_country_code import CountryCode
 from django.db import models
 
 class User(models.Model):
@@ -11,10 +12,11 @@ class User(models.Model):
 
     email         = models.EmailField(max_length = 45)
     name          = models.CharField(max_length = 45)
-    phone_number  = models.IntegerField()
+    phone_number  = models.IntegerField(null = True)
     password      = models.CharField(max_length = 500)
     is_social     = models.BooleanField(default = False)
-    type          = models.CharField(max_length = 45)
+    type          = models.CharField(max_length = 45, choices = USER_TYPES, null = True)
+    kakao_user_id = models.IntegerField(null = True)
     country_code  = models.ForeignKey('users.CountryCode', on_delete = models.SET_NULL, null = True)
     social        = models.ForeignKey('users.Social', on_delete = models.SET_NULL, null = True)
 
