@@ -11,7 +11,7 @@ class User(models.Model):
 
     email         = models.EmailField(max_length = 45)
     name          = models.CharField(max_length = 45)
-    phone_number  = models.IntegerField
+    phone_number  = models.IntegerField()
     password      = models.CharField(max_length = 500)
     is_social     = models.BooleanField(default = False)
     type          = models.CharField(max_length = 45)
