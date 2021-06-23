@@ -7,14 +7,15 @@ from django.http      import JsonResponse
 from django.db.models import Q
 from django.db        import transaction
 
-from users.models    import User, GeneralUser, CompanyUser, University
-from postings.models import Company
-from users.utils     import (
-                            validate_email, 
-                            validate_name, 
-                            validate_password, 
-                            validate_phone_number
-                            )
+from app.settings.base import SECRET_KEY, ALGORITHM
+from users.models      import User, GeneralUser, CompanyUser, University
+from postings.models   import Company
+from users.utils       import (
+                                validate_email, 
+                                validate_name, 
+                                validate_password, 
+                                validate_phone_number
+                                )
 
 class SignUpView(View):
     @transaction.atomic
@@ -110,3 +111,16 @@ class SignUpView(View):
 
         except KeyError:
             return JsonResponse({'MESSAGE':'KEY_ERROR'}, status = 400)
+
+class SignInView(View):
+    def post(self, request):
+        data     = json.loads(request.body)
+        email    = data['email']
+        password = data['password']
+
+        if user := User.objects.filter(email = email):
+            if bcrypt.checkpw(password.encode('utf-8'), user.get().password.encode('utf-8')):
+                token = jwt.encode({'id' : user.get().id}, SECRET_KEY, algorithm=ALGORITHM)
+                return JsonResponse({'MESSAGE':'SUCCESS', 'TOKEN':token}, status = 200)
+            return JsonResponse({'MESSAGE':'PASSWORD_ERROR'}, status = 401)
+        return JsonResponse({'MESSAGE':'INVALID_USER'}, status = 404)
