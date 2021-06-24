@@ -17,6 +17,7 @@ class KakaoView(View):
             }
 
             response      = requests.get(url, headers = headers)
+            print(response.json())
             data          = response.json()
             kakao_user_id = data['id']
             email         = data['kakao_account']['email']
@@ -42,5 +43,5 @@ class KakaoView(View):
             token = jwt.encode({'id': User.objects.get(kakao_user_id = kakao_user_id).id}, SECRET_KEY, algorithm = ALGORITHM)
             return JsonResponse({'TOKEN': token, 'name': nickname}, status = 200)
 
-        except KeyError:
-            return JsonResponse({'MESSAGE': 'KEY_ERROR'}, status = 400)
+        except KeyError as e:
+            return JsonResponse({'MESSAGE': f'{e}KEY_ERROR'}, status = 400)
