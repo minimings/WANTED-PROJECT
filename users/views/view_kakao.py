@@ -28,6 +28,7 @@ class KakaoView(View):
                     kakao_user_id = kakao_user_id,
                     email         = email,
                     name          = nickname,
+                    type          = '일반회원',
                     is_social     = True,
                     social_id     = 1
                 )
