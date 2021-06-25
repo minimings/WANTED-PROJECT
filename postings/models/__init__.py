@@ -2,6 +2,7 @@ from .model_company_information import *
 from .model_company_url         import *
 from .model_company             import *
 from .model_employee            import *
+from .model_establishment       import *
 from .model_icon                import *
 from .model_job_group           import *
 from .model_job_posting         import *
@@ -12,3 +13,4 @@ from .model_nation              import *
 from .model_news_keyword        import *
 from .model_region              import *
 from .model_tag                 import *
+from .model_website_address     import *
