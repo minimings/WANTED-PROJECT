@@ -8,6 +8,7 @@ from app.settings.base import SECRET_KEY, ALGORITHM
 from users.models      import User, GeneralUser, ProfileImage
 
 class KakaoView(View):
+
     def post(self, request):
         try:
             access_token = request.headers.get('Authorization')
@@ -22,7 +23,7 @@ class KakaoView(View):
             email         = data['kakao_account']['email']
             nickname      = data['kakao_account']['profile']['nickname']
             profile_image = data['kakao_account']['profile']['profile_image_url']
-
+            
             if not User.objects.filter(kakao_user_id = kakao_user_id).exists():
                 user = User.objects.create(
                     kakao_user_id = kakao_user_id,

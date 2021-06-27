@@ -18,6 +18,7 @@ from users.utils       import (
                                 )
 
 class SignUpView(View):
+
     @transaction.atomic
     def post(self, request):
         try:
@@ -26,7 +27,6 @@ class SignUpView(View):
             name            = data['name']
             phone_number    = data['phone_number']
             password        = data['password']
-            is_social       = data.get('is_social', False)
             type            = data['type']
             country_code_id = data['country_code_id']
 
@@ -60,7 +60,6 @@ class SignUpView(View):
                 name            = name,
                 phone_number    = phone_number,
                 password        = hashed_password,
-                is_social       = is_social,
                 type            = type,
                 country_code_id = country_code_id,
             )
@@ -87,13 +86,13 @@ class SignUpView(View):
 
                 if user_company:
                     if not Company.objects.filter(name = user_company).exists():
-                        return JsonResponse({'MESSAGE':'COMPANY_DOES_NOT_EXISTS'}, status = 400)
+                        Company.objects.create(name = user_company)
                     company_id = Company.objects.get(name = user_company).id
                     general_user.user_company.add(company_id)
 
                 if user_university:
                     if not University.objects.filter(name = user_university).exists():
-                        return JsonResponse({'MESSAGE':'UNIVERSITY_DOES_NOT_EXISTS'}, status = 400)
+                        University.objects.create(name = user_university)
                     university_id = University.objects.get(name = user_university).id
                     general_user.user_university.add(university_id)
 
@@ -112,7 +111,11 @@ class SignUpView(View):
         except KeyError:
             return JsonResponse({'MESSAGE':'KEY_ERROR'}, status = 400)
 
+        except ValueError:
+            return JsonResponse({'MESSAGE':'VALUE_ERROR'}, status = 400)
+
 class SignInView(View):
+
     def post(self, request):
         data     = json.loads(request.body)
         email    = data['email']
@@ -121,6 +124,9 @@ class SignInView(View):
         if user := User.objects.filter(email = email):
             if bcrypt.checkpw(password.encode('utf-8'), user.get().password.encode('utf-8')):
                 token = jwt.encode({'id' : user.get().id}, SECRET_KEY, algorithm=ALGORITHM)
+                
                 return JsonResponse({'MESSAGE':'SUCCESS', 'TOKEN':token, 'name':user.first().name}, status = 200)
+            
             return JsonResponse({'MESSAGE':'PASSWORD_ERROR'}, status = 401)
+        
         return JsonResponse({'MESSAGE':'INVALID_USER'}, status = 404)

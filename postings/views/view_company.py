@@ -22,6 +22,7 @@ from app.settings.base import (AWS_ACCESS_KEY_ID,
                                AWS_STORAGE_BUCKET_NAME)
 
 class CompanyView(View):
+
     @transaction.atomic
     @login_decorator
     def post(self, request):
@@ -40,6 +41,7 @@ class CompanyView(View):
             employees_id                = data['employees_id']
             job_group_id                = data['job_group_id']
             establishment_id            = data['establishment_id']
+            tag                         = data.get('tag')
             icon                        = data.get('icon')
             website_address             = data.get('website_address')
             subscription_path           = data.get('subscription_path')
@@ -71,6 +73,9 @@ class CompanyView(View):
                             'subscription_path'           : subscription_path,
                             }
                         )
+
+            if tag:
+                [company.tag.add(id) for id in tag]
 
             if website_address:
                 WebsiteAddress.objects.bulk_create(
@@ -107,6 +112,9 @@ class CompanyView(View):
 
         except KeyError:
             return JsonResponse({'MESSAGE':'KEY_ERROR'}, status = 400)
+
+        except ValueError:
+            return JsonResponse({'MESSAGE':'VALUE_ERROR'}, status = 400)
 
     @login_decorator
     def get(self, request):

@@ -5,3 +5,6 @@ class Career(models.Model):
 
     class Meta:
         db_table = 'careers'
+
+    def __str__(self):
+        return self.career

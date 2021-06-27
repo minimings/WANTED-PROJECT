@@ -21,7 +21,7 @@ class Company(models.Model):
     company_information         = models.ManyToManyField('postings.CompanyInformation', through = 'postings.CompanyInformationDate')
     tag                         = models.ManyToManyField('postings.Tag', through = 'postings.CompanyTag')
     icon                        = models.OneToOneField('postings.Icon', on_delete = models.SET_NULL, null = True)
-    company_user                = models.OneToOneField('users.CompanyUser', on_delete = models.CASCADE)
+    company_user                = models.OneToOneField('users.CompanyUser', on_delete = models.CASCADE, null = True)
     created_at                  = models.DateTimeField(auto_now_add = True)
     updated_at                  = models.DateTimeField(auto_now = True)
 
