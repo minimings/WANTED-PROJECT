@@ -8,8 +8,7 @@ from resumes.models    import FileResume
 from users.utils       import login_decorator
 from app.settings.base import (AWS_ACCESS_KEY_ID, 
                                AWS_SECRET_ACCESS_KEY, 
-                               AWS_STORAGE_BUCKET_NAME, 
-                               AWS_REGION)
+                               AWS_STORAGE_BUCKET_NAME)
 
 class FileResumeView(View):
     @transaction.atomic

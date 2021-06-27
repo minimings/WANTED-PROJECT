@@ -5,3 +5,6 @@ class Nation(models.Model):
 
     class Meta:
         db_table = 'nations'
+
+    def __str__(self):
+        return self.name

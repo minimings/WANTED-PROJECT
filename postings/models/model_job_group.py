@@ -6,3 +6,6 @@ class JobGroup(models.Model):
 
     class Meta:
         db_table = 'job_groups'
+
+    def __str__(self):
+        return self.name
