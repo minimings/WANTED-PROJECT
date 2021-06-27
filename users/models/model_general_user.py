@@ -9,6 +9,8 @@ class GeneralUser(models.Model):
     user               = models.OneToOneField('users.User', on_delete = models.CASCADE)
     skill              = models.ManyToManyField('users.Skill', through = 'users.UserSkill')
     interested_keyword = models.ManyToManyField('users.InterestedKeyword', through = 'users.UserInterestedKeyword')
+    user_university    = models.ManyToManyField('users.University', through = 'users.UserUniversity')
+    user_company       = models.ManyToManyField('postings.Company', through = 'users.UserCompany')
 
     class Meta:
         db_table = 'general_users'
