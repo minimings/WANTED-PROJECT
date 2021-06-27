@@ -13,4 +13,5 @@ from .model_nation              import *
 from .model_news_keyword        import *
 from .model_region              import *
 from .model_tag                 import *
+from .model_tag_category        import *
 from .model_website_address     import *
