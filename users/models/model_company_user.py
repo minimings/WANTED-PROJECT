@@ -6,3 +6,6 @@ class CompanyUser(models.Model):
 
     class Meta:
         db_table = 'company_users'
+
+    def __str__(self):
+        return self.user.name
