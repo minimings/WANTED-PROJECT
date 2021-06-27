@@ -13,6 +13,9 @@ class GeneralUser(models.Model):
     class Meta:
         db_table = 'general_users'
 
+    def __str__(self):
+        return self.user.name
+
 class Follow(models.Model):
     is_follow    = models.BooleanField(default = False)
     general_user = models.ForeignKey('users.GeneralUser', on_delete = models.CASCADE)

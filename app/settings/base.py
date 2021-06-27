@@ -8,6 +8,16 @@ env          = environ.Env()
 env_file     = str(SETTINGS_DIR.path('.env'))
 env.read_env(env_file)
 
+###S3 Storages
+AWS_ACCESS_KEY_ID       = os.environ.get('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY   = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
+AWS_REGION              = os.environ.get('AWS_REGION ', '')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', '')
+DEFAULT_FILE_STORAGE    = os.environ.get('DEFAULT_FILE_STORAGE', '')
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE  = 'storages.backends.s3boto3.S3Boto3Storage'
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
 ALGORITHM = os.environ.get('DJANGO_ALGORITHM', '')
@@ -26,6 +36,7 @@ INSTALLED_APPS = [
     'resumes',
     'recommendations',
     'django_extensions',
+    'storages',
 
     #allauth
     'allauth',
