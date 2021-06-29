@@ -27,10 +27,12 @@ API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 - 회사 정보 전달 API : tag filter, 검색기능 구현
 - 구인공고 등록 API 구현
 - 구인공고 정보 전달 API : 직종, 태그, 국가, 경력 filter, 정렬기능 구현
+- Admin customizing
 
 'resume'
 - PDF 이력서 업로드 API : AWS(S3) 이용한 이력서 업로드 구현
 - PDF 이력서 삭제 API : 업로드된 이력서 삭제 구현
+- Admin customizing
 
 -------------------
 ## ✔︎ References
