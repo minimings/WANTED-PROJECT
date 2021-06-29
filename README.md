@@ -9,6 +9,7 @@
 
 ## 기술 스택
 - Python, Django, bcrypt, pyjwt, MySQL, AqueryTool, AWS S3
+
 Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177& / Password : 366k30
 
 ## 구현 내용 
