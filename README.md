@@ -11,8 +11,9 @@
 - Python, Django, bcrypt, pyjwt, MySQL, AqueryTool, AWS S3
 
 ## 구현 내용 
-API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177& / Password : 366k30
+
+API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 
 'users'
 - user type에 따른 일반 회원가입 API 구현
