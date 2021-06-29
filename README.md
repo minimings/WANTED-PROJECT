@@ -10,9 +10,10 @@
 ## 기술 스택
 - Python, Django, bcrypt, pyjwt, MySQL, AqueryTool, AWS S3
 
+## 구현 내용 
+API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177& / Password : 366k30
 
-## 구현 내용 
 'users'
 - user type에 따른 일반 회원가입 API 구현
 - 일반 로그인 API 구현
@@ -29,8 +30,6 @@ Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c
 'resume'
 - PDF 이력서 업로드 API : AWS(S3) 이용한 이력서 업로드 구현
 - PDF 이력서 삭제 API : 업로드된 이력서 삭제 구현
-
-API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 
 -------------------
 ## ✔︎ References
