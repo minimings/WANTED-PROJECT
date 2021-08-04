@@ -5,7 +5,7 @@
 - 2021.06.16~2021.06.27
 
 ## 👫 Team
-- 황수민
+- BE: 황수민
 
 ## ⚒️Skill
 <p><img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/>
