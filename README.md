@@ -1,20 +1,25 @@
-## 프로젝트 소개
+## ✨ Project
 소셜 커리어 플랫폼 '원티드'를 모티브로 한 프로젝트
 
-## 프로젝트 기간
+## 🗓 Period
 - 2021.06.16~2021.06.27
 
-## BackEnd
+## 👫 Team
 - 황수민
 
-## 기술 스택
-- Python, Django, bcrypt, pyjwt, MySQL, AqueryTool, AWS S3
+## ⚒️Skill
+<p><img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/>
+<img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/>
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
+<img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AWS&logoColor=white"/></p>
 
-## 구현 내용 
+## 📑 Document
 Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177& / Password : 366k30
 
 API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
 
+
+## 📝 구현한 기능
 'users'
 - user type에 따른 일반 회원가입 API 구현
 - 일반 로그인 API 구현
