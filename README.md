@@ -4,8 +4,8 @@
 ## 🗓 Period
 - 2021.06.16~2021.06.27
 
-## 👫 Team
-- BE: 황수민
+## 👫 Team - Backend
+- [황수민](https://github.com/miniming)
 
 ## ⚒️Skill
 <p><img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/>
@@ -14,9 +14,9 @@
 <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AWS&logoColor=white"/></p>
 
 ## 📑 Document
-Aquery Tool URL : https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177& / Password : 366k30
+[Aquery Tool URL](https://aquerytool.com/aquerymain/index/?rurl=39e3568d-986a-4c11-860c-ed2bf8bf7177&) / Password : 366k30
 
-API Document URL : https://documenter.getpostman.com/view/15442239/Tzef93XY
+[API Document URL](https://documenter.getpostman.com/view/15442239/Tzef93XY)
 
 
 ## 📝 구현한 기능
